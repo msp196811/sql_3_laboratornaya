@@ -37,9 +37,6 @@ ALTER TABLE SalesLT.ProductTMP_005 ADD ColorID int
 
 6.
 UPDATE SalesLT.ProductTMP_005
-SET ColorID = c.ColorID
-from SalesLT.ColorTMP_005 c
-WHERE c.ColorID  in
-	(SELECT ColorID 
-	 FROM SalesLT.ColorTMP_005
-    )
+SET ColorID = col.ColorID
+from SalesLT.ColorTMP_005 col
+where color = col.NameColor
