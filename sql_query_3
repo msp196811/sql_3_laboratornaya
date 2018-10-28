@@ -28,7 +28,8 @@ CREATE TABLE SalesLT.ColorTMP_005 (
 INSERT INTO SalesLT.ColorTMP_005 (NameColor)
 SELECT SP.Color
 FROM SalesLT.Product as SP
-where SP.Color is not null;
+where SP.Color is not null
+GROUP by c.NameColor;
 
 5.
 ALTER TABLE SalesLT.ProductTMP_005 ADD ColorID int
